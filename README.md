@@ -2,6 +2,8 @@
 
 Testing a trivial example of alpha decompositing (restoring alpha channel from a known mask with a known background)
 
+<img src="test-squares_20-40-60-80.png" width="50%"><img src="flat.png" width="50%">
+
 Flattening is done by `imagemagick`, e.g. for black, RGB = `(0,0,0)`:
 
 ```sh
