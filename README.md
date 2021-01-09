@@ -55,3 +55,26 @@ to `(1,1,1)` and remain visible against a black background!
 
 So in fact the limit on transparency is what brings it under `0.5`, not under `1`,
 i.e. half the alpha limit you'd expect: `12.5%` or ⅛.
+
+Some other very low tolerances you might expect would be higher:
+
+- (2,2,2) is distinguishable down to an alpha opacity of 25% or ¼
+- (1,1,1) is distinguishable down to an alpha opacity of 50% or ½
+
+Also note that it's the maximum that matters, not the average:
+
+- Consider how `(1, 1, 255)` will be distinguishable below 25% opacity unlike `(2,2,2)`
+- Consider the colour `(1,2,3)`? When will this become indistinguishable?
+  - The same point that `(3,3,3)` will: 16.666% or ⅙
+
+## Relevance
+
+This is relevant to superresolution tasks which require a flat image (no alpha channel)
+wherein postprocessing is expected to successfully recover an alpha channel
+for an enlarged image.
+
+This limitation motivates an effort in image preprocessing for superresolution to
+choose a background colour (i.e. temporary alpha channel compositor) as distant
+from the maximum of the pixels dependent on their opacity
+
+(To be continued)
