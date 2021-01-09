@@ -77,4 +77,8 @@ This limitation motivates an effort in image preprocessing for superresolution t
 choose a background colour (i.e. temporary alpha channel compositor) as distant
 from the maximum of the pixels dependent on their opacity
 
+- For instance, if you wanted to check the minimum distance of any pixel away from
+  the background, you'd take the minimum of the array of per-pixel maxima (i.e. the
+  maximum over the [R,G,B] and then the minimum of the list of results)
+
 (To be continued)
